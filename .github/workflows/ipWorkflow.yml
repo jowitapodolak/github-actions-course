@@ -17,6 +17,6 @@ jobs:
           echo ${{ steps.ip.outputs.ipv6 }}
       - name: Print the region from inside the EC2 instance
         run: |
-          REGION=`curl http://169.254.169.254/latest/dynamic/instance-identity/document|grep region|awk -F\" '{print $4}'`
-          echo $REGION
+          metadata=`curl http://169.254.169.254/latest/meta-data/`
+          echo $metadata
           echo "IS this even working?"
