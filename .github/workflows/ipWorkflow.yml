@@ -17,7 +17,6 @@ jobs:
           echo ${{ steps.ip.outputs.ipv6 }}
       - name: Print the region from inside the EC2 instance
         run: |
- 
           text = `aws ec2 describe-vpcs`
           echo $text
           echo "IS this even working?"
