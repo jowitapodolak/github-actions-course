@@ -17,6 +17,7 @@ jobs:
           echo ${{ steps.ip.outputs.ipv6 }}
       - name: Print the region from inside the EC2 instance
         run: |
-          metadata=`curl http://169.254.169.254/latest/meta-data/`
-          echo $metadata
+ 
+          text = `aws ec2 describe-vpcs`
+          echo $text
           echo "IS this even working?"
